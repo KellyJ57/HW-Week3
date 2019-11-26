@@ -1,46 +1,27 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Simple Password Generator</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="generator.js" async></script>
-    <script>
-        window.onload = function () {
-            var generateButton = document.querySelector('#generate');
-            generateButton.addEventListener('click', function () {
-                document.querySelector('#password').value = generate();
-            });
-        }
-    </script>
+  <meta charset="UTF-8">
+  <title>Password Generator</title>
 </head>
 
 <body>
+  <script type="text/javascript">
+    let capL = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    let lowL = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    let number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+    let special = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
 
-    <div style="width:320px;margin:10% auto 0 auto;text-align:center">
-        <button id="generate">Generate</button>
-        <input id="password" type="text" placeholder="Your password...">
-    </div>
-    <script type="text/javascript">
-        function generate(length = 12) {
-            var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            var lowercase = 'abcdefghijklmnopqrstuvwxyz';
-            var numbers = '0123456789';
-            var symbols = '!"#$%&\'()*+,-./:;<=>?@^[\\]^_`{|}~';
+    let PassLength = promt("How many characters between8-128?");
+    if ((PassLength >= 7 || PassLength <= 129)) {
+      alert("You chose" + PassLength)
+    }
+    else alert("You must choose between 8 and 128")
 
-            var all = uppercase + lowercase + numbers + symbols;
 
-            var password = '';
-
-            for (var index = 0; index < length; index++) {
-                var character = Math.floor(Math.random() * all.length);
-                password += all.substring(character, character + 1);
-            }
-
-            return password;
-        }
-    </script>
+  </script>
 </body>
 
 </html>

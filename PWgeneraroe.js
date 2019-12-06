@@ -27,6 +27,7 @@ function getPasswordOptions() {
     let hasUpperCharacters = confirm ("Click ok to confirm upper cased charaters");
     let hasLowerCharacters = confirm ("Click ok to confirm lower cased charaters");
 
+    console.log (hasSpecialCharacters);
     if ( hasLowerCharacters === false && hasNumericCharacters === false && hasSpecialCharacters ===false && hasUpperCharacters ===false) {
         alert("Please select at least one type")
         return; 
@@ -47,7 +48,8 @@ function getRandom(arr) {
 }
 
 function generatePassword () {
-    let options = getPasswordOptions ();
+    let options = getPasswordOptions();
+    console.log(options);
     let result = [];
     let possibleCharacters = [];
     let gauranteedCharacters = [];
@@ -80,12 +82,14 @@ function generatePassword () {
     return result.join ("")
     
 }
-let copyButton = document.querySelector ("#copy");
-let generateButton = document.querySelector ("#generate");
+let copyButton = document.querySelector("#copy");
+let generateButton = document.querySelector("#generate");
 
 
 function writePassword ()  {
+    console.log('begin of writepass');
     let password = generatePassword ();
+    console.log(password);
     let passwordText = document.querySelector ("#password");
     passwordText.value = password;
     copyButton.removeAttribute ("disabled");
@@ -100,9 +104,9 @@ function copyToClipboard() {
         );
       }
 // Add event listener to generate button
-      generateBtn.addEventListener("click", writePassword);
+    //   generateButton.addEventListener("click", writePassword);
       // Add event listener to copy button
-      copyBtn.addEventListener("click", copyToClipboard);
+      copyButton.addEventListener("click", copyToClipboard);
 
 }
 

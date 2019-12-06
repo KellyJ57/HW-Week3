@@ -94,6 +94,7 @@ function writePassword ()  {
     passwordText.value = password;
     copyButton.removeAttribute ("disabled");
     copyButton.focus ();
+}
 
 function copyToClipboard() {
     var passwordText = document.querySelector("#password");
@@ -103,12 +104,13 @@ function copyToClipboard() {
           "Your password " + passwordText.value + " was copied to your clipboard."
         );
       }
+    
 // Add event listener to generate button
-    //   generateButton.addEventListener("click", writePassword);
+       generateButton.addEventListener("click", writePassword);
       // Add event listener to copy button
       copyButton.addEventListener("click", copyToClipboard);
 
-}
+
 
 
 
